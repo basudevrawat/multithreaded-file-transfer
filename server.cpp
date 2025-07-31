@@ -44,7 +44,7 @@ void handle_client(int client_socket, sockaddr_in client_addr) {
 }
 
 int main() {
-    int server_fd, client_socket;
+    int server_fd;
     sockaddr_in address;
     socklen_t addrlen = sizeof(address);
 
@@ -58,8 +58,18 @@ int main() {
     std::cout << "[*] Server listening on port " << PORT << "\n";
 
     while (true) {
-        client_socket = accept(server_fd, (sockaddr *)&address, &addrlen);
-        std::thread t(handle_client, client_socket, address);
+        sockaddr_in client_address;
+        socklen_t addr_len = sizeof(client_address);
+
+        int client_socket = accept(server_fd, (sockaddr*)&client_address, &addr_len);
+        if (client_socket < 0) {
+            std::cerr << "Failed to accept connection" << std::endl;
+            continue;
+        }
+
+        std::thread t([=]() {
+            handle_client(client_socket, client_address);
+        });
         t.detach();
     }
 
