@@ -10,5 +10,6 @@ Fourth Step: The client saves the file locally with a `received_` prefix.
 
 To Compile: We need `g++` installed.
 
-Compile Server: ```bash
+Compile Server: 
+```bash
 g++ server.cpp -o server -lpthread
