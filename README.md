@@ -13,3 +13,9 @@ To Compile: We need `g++` installed.
 Compile Server: 
 ```bash
 g++ server.cpp -o server -lpthread
+
+![Demo Screenshot](screenshot0.png)
+
+This screenshot shows the server and client communicating successfully:
+
+![Demo Screenshot](screenshot0.png)
