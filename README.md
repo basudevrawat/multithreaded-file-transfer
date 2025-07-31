@@ -18,6 +18,5 @@ g++ -std=c++17 client.cpp -o client
 
 This screenshot shows the server and client communicating successfully:
 
- ![screenshot][https://github.com/basudevrawat/multithreaded-file-transfer/issues/1#issuecomment-3140227894]
- ![screenshot][https://github.com/basudevrawat/multithreaded-file-transfer/issues/1#issuecomment-3140228764]
-
+![screenshot](https://github.com/basudevrawat/multithreaded-file-transfer/issues/1#issuecomment-3140227894)
+![screenshot](https://github.com/basudevrawat/multithreaded-file-transfer/issues/1#issuecomment-3140228764)
