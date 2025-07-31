@@ -1,15 +1,23 @@
-Multithreaded File Transfer System: This is a multithreaded client-server file transfer system implemented in C++. It allows a client to request files from a server over TCP. The server handles multiple clients simultaneously using POSIX threads.
+# Multithreaded File Transfer System (C++)
 
-Features include: Multithreaded server using `pthread` to handle multiple clients concurrently, Secure file transfer over TCP sockets, Simple command-line interface, Cross-platform C++ code (Linux/macOS)
+A simple multithreaded TCP file transfer system using C++. The server supports multiple concurrent client connections using `std::thread`.
 
-Working: 
-First Step: The **server** listens for incoming connections on a specified port. 
-Second Step: The **client** connects to the server and requests a file by name.
-Third Step: The server checks for the file and sends its contents if it exists.
-Fourth Step: The client saves the file locally with a `received_` prefix.
+## Features
+- Multithreaded file server using POSIX sockets
+- File transfer over TCP
+- Thread-per-client architecture
 
-To Compile: We need `g++` installed.
+## Usage
 
-Compile Server: 
+### 1. Compile
+
 ```bash
-g++ server.cpp -o server -lpthread
+g++ -std=c++17 server.cpp -o server
+g++ -std=c++17 client.cpp -o client
+
+
+This screenshot shows the server and client communicating successfully:
+
+ ![screenshot][https://github.com/basudevrawat/multithreaded-file-transfer/issues/1#issuecomment-3140227894]
+ ![screenshot][https://github.com/basudevrawat/multithreaded-file-transfer/issues/1#issuecomment-3140228764]
+
